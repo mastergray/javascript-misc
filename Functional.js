@@ -14,17 +14,15 @@ Functional = {
     
     // Evaluates function once number of arguments is equal or greater to arity:
     function reduceArity() {
+
+      var _args = _slice.call(arguments);
       
-      // Flatten arguments to bind:
-      var args = _slice.call(arguments).reduce(function(result, arg) {
-        result = result.concat(arg);
-        return result;
-      }, []);
-      
-      //  Evaulate function, otherwise continue to bind arguments:
-      return args.length >= _arity
-        ? fn.apply(null, args)
-        : reduceArity.bind(null, args);
+      //  Evaulate function, otherwise continue to concat new arguments:
+      return _args.length >= _arity
+        ? fn.apply(null, _args)
+        : function () {
+            return reduceArity.apply(null, _args.concat(_slice.call(arguments)));
+        }
       
     }
     
@@ -32,7 +30,7 @@ Functional = {
     
   },
   
-  // :: Reduces a list of unary functions into a single unary function
+  // :: Transforms a list of unary functions into a single unary function
   compose: function () {
     
     // Applies the arguments of one function to call for the arguments of another:
@@ -49,3 +47,12 @@ Functional = {
   }
  
 }
+
+F = Functional;
+readWithMessage = F.curry(function (message, list) {
+  list.map(function (elem) {
+    console.log(message + ' => ' + elem);
+  });
+  
+})
+
