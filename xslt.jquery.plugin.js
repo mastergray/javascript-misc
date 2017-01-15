@@ -16,7 +16,7 @@
 			_getResponseType = function (URL, xhr) {
 				
 				var ext = URL.split('.').pop();
-	
+				
 				switch(ext.toLowerCase()) {
 					case 'xml':
 					case 'xsl':
@@ -27,7 +27,7 @@
 				}
 				
 			},
-		
+			
 			// Uses Ajax request to load a file cross-browser:
 			_loadFile = function (URL, success, error) {
 				
@@ -48,7 +48,6 @@
 						
 						}
 						
-
 				} catch (e) {
 					
 					//	Chrome, Safari, and Mozilla Support:
@@ -90,14 +89,14 @@
 					return isLoaded.promise();
 					
 				})();
-			
+				
 				_promises.push(promise);
 							
 			};
 		
 		// Creates a promise for each file:
 		for (var fileName in files) {
-		
+		  
 			_createPromise(fileName, files[fileName]);
 		
 		}

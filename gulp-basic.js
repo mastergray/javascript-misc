@@ -17,7 +17,7 @@ gulp.task('lint', function() {
 
 // Compile Our Sass
 gulp.task('sass', function() {
-    return gulp.src('scss/*.scss') // compiles any of our Sass files in our scss/ directory into .css and saves the compiled .css file in our css/ directory.
+    return gulp.src('scss/*.scss') // compiles any of our Sass files in our scss/ directory into .css and saves the compiled .css file in our css/ directory
         .pipe(sass())
         .pipe(gulp.dest('css'));
 });
@@ -30,7 +30,7 @@ gulp.task('scripts', function() {
 		// concatenates all JavaScript files in our js/ directory and saves the ouput to our dist/ directory:
 		.pipe(concat('bundle.js'))
         .pipe(gulp.dest('dist'))
-		
+        
 		//	takes that concatenated file, minifies it, renames it and saves it to the dist/ directory alongside the concatenated file:
         .pipe(rename('bundle.min.js'))
         .pipe(uglify())

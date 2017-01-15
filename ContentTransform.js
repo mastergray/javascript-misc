@@ -32,7 +32,7 @@ ContentTransform = {
 		canvas.style.display = 'none';
 		canvas.width = width;
 		canvas.height = height;
-	
+		
 		elem.appendChild(canvas);
 		
 		return canvas;
@@ -43,7 +43,7 @@ ContentTransform = {
 	getCSSFromElem: function (elem) {
 		
 		var win = document.defaultView || window, style, styleNode = {};
- 
+		
 			if (win.getComputedStyle) { /* Modern browsers */
 				
 				style = win.getComputedStyle(elem, '');
@@ -58,7 +58,7 @@ ContentTransform = {
 					}
 				
 				}
-			
+				
 			} else if (elem.currentStyle) { /* IE */
 				
 				style = elem.currentStyle;
@@ -66,7 +66,7 @@ ContentTransform = {
 				for (var name in style) {
 					styleNode[name] = style[name];
 				}
-			
+				
 			} else { /* Ancient browser..*/
 				
 				style = elem.style;
@@ -105,7 +105,7 @@ ContentTransform = {
 		   img.src = reader.result;
 		   
 		});
-
+		
 		//	Converts SVG blob data into a data URL:
 		reader.readAsDataURL(svg);
 				
@@ -132,7 +132,7 @@ ContentTransform = {
 		var self = this,
 			  type = type || "image/png",
 			  img = new Image();
-		
+			  
 		img.src = src;
 		
 			img.onload = function () {
@@ -168,7 +168,7 @@ ContentTransform = {
 			if (images.length > 0) {
 			
 				var image = images.shift();
-			
+				
 				self.imgtoDataURL(image.getAttribute('src'), function (dataURL) {
 						
 					// Overwrites attributes with dataURL:
