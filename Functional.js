@@ -47,12 +47,3 @@ Functional = {
   }
  
 }
-
-F = Functional;
-readWithMessage = F.curry(function (message, list) {
-  list.map(function (elem) {
-    console.log(message + ' => ' + elem);
-  });
-  
-})
-
