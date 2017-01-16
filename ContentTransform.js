@@ -6,7 +6,6 @@
 
 ContentTransform = {
 	
-	
 	CSSDefaults:{}, //	Stores default values for css properties:
 	
 	HTMLtoDOM: function (html) {
@@ -158,8 +157,6 @@ ContentTransform = {
 		
 	},
 	
-	
-	
 	//	Recurisvely converts all src attributes for an array of image nodes to data URLs, then runs a callback
 	imagesToDataURLs: function (images, callback) {
 		
@@ -183,7 +180,7 @@ ContentTransform = {
 				callback();
 			
 			}
-		
+			
 	}
-
+	
 }

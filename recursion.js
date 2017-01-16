@@ -1,9 +1,7 @@
-
-
 //	Add together all elements of given array:
 function sumArr(arr, total) {
 	
-	return arr.length == 0 ? total :  sumArr(arr, total ? total+=arr.pop() : arr.pop());
+  return arr.length === 0 ? total :  sumArr(arr, total ? total+=arr.pop() : arr.pop());
 	
 }
 
@@ -31,61 +29,13 @@ function hasProperty(obj, property, i) {
 //	Converts an object's property names (keys) into an array:
 function toArray(obj, result, i) {
 
-	return i >= Object.keys(obj).length - 1 ? result : result ? toArray(obj, result.push(Object.keys(obj)[i]), ++i) : toArray(obj, new Array(), 0);
+	return i >= Object.keys(obj).length - 1 ? result : result ? toArray(obj, result.push(Object.keys(obj)[i]), ++i) : toArray(obj, [], 0);
 
 }
 
 //	Returns array of properties that match criteria function for an object:
 function getProperty(obj, criteria, result, i) {
 
-	return i >= Object.keys(obj).length - 1 ? result : result ? getProperty(obj, criteria, result.push(criteria(Object.keys(obj)[i])), ++i) : getProperty(obj, critera, new Array(), 0);
-
-}
-
-
-function parseArr(arr, result) {
-
-		for (var index in arr) {
-			
-			var elem = arr[index];
-			
-			switch (elem.constructor) {
-				case Array:
-					 parseArr(elem, result);
-				break;
-				case Object:
-					 parseObj(elem, result);
-				break;
-				default:
-					result.push(elem);
-			}
-			
-		}
-		
-	return result;
-
-}
-
-function parseObj(obj, result) {
-		
-	for (var property in obj) {
-		
-		var value = obj[property];
-
-		switch (value.constructor) {
-			case Array:
-				parseArr(value, result);
-			break;
-			case Object:
-				 parseObj(value, result);
-			break;
-			default:
-					
-				result.push(value);
-		}
-		
-	}
-		
-	return result;
+	return i >= Object.keys(obj).length - 1 ? result : result ? getProperty(obj, criteria, result.push(criteria(Object.keys(obj)[i])), ++i) : getProperty(obj, critera, [], 0);
 
 }

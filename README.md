@@ -1,5 +1,3 @@
-A random collection of JavaScript files that I thought were important to keep around for some reason or another. This inlcudes:
-
 ### recursion.js
 A series of one line recursive functions that I wrote primarily for my own amsusement.
 ### Functional.js
