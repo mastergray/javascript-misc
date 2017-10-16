@@ -1,5 +1,5 @@
 ### recursion.js
-A series of one line recursive functions that I wrote primarily for my own amsusement.
+A series of one line recursive functions that may or may not work.
 ### Functional.js
 A collection of functional programming methods
 ###  ContentTransform.js
