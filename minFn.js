@@ -1,10 +1,10 @@
 /**
  *
- *  Functional.js - Collection of functional programming methods
+ *  minFn.js - Collection of functional programming methods
  *
  */
 
-function () {
+function minFn () {
 
   // Transforms a polyadic function into an unary function:
   function curry(fn) {
@@ -48,7 +48,7 @@ function () {
       return Array.isArray(b)
         ? a.concat(flatten(b))
         : a.concat(b);
-   }, []);
+    }, []);
   }
   
   // Returns a namespace containing all functions from above:
