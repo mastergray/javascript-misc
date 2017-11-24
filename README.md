@@ -1,6 +1,6 @@
 ### recursion.js
 A series of one line recursive functions that may or may not work.
-### Functional.js
+### minFn.js
 A collection of functional programming methods
 ###  ContentTransform.js
 Transforms a DOM element into an image data-url
